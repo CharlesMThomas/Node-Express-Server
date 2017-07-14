@@ -9,18 +9,17 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', (req, res) => {
     //res.send('<h1>Hello Express!</h1>');
 
-    res.send({
-        name: 'Charles',
-        likes: [
-            'Cars',
-            'Traveling'
-        ]
+    res.render('home.hbs', {
+        pageTitle: 'Home Page',
+        welcomeMessage: 'Welcome to my website',
+        currentYear: new Date().getFullYear()
     });
 });
 
-app.get('/bad', (req, res) => {
-    res.send({
-        errorMessage: 'You\'ve made a bad request'
+app.get('/about', (req, res) => {
+    res.render('about.hbs', {
+        pageTitle: 'About Page',
+        currentYear: new Date().getFullYear()
     });
 });
 
