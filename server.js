@@ -51,6 +51,10 @@ app.get('/about', (req, res) => {
     });
 });
 
+app.get('/projects', (req, res) => {
+
+});
+
 app.listen(port, () => {
     console.log(`Express server is running on port ${port}`);
 });
